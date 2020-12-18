@@ -16,4 +16,5 @@ This project was designed to sync the coordination of bus arrivals and passenger
 
 # Appendix
 The below image shows the arduino microcontroller setup.
+
 ![logo](https://github.com/khalilgreenidge/BIM-Travel/blob/main/sketch.png "arduino")
