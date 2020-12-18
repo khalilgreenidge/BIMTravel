@@ -109,7 +109,7 @@
 				$start = $_POST["buslocation"];
 				$end = $_POST["userlocation"];
 				
-				$key = "AIzaSyDO2jhqxUIikSLLvgVa27g14yFi_iF_6lQ";
+				$key = "Removed because this repository is not private";
 
 				$url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$start."&destinations=".$end."&key=AIzaSyDO2jhqxUIikSLLvgVa27g14yFi_iF_6lQ";
 				
