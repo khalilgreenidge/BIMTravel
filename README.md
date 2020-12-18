@@ -8,8 +8,8 @@ This project was designed to sync the coordination of bus arrivals and passenger
 
 # Features
 - Dashboard
-- Map
-- Arduino Microcontroller
+- Map - display vehicle location
+- Update location (via Arduino Microcontroller)
 - Add drivers
 - Add vehicles
 
