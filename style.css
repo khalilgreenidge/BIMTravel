@@ -1,0 +1,377 @@
+/*********** CSS FOR BIM TRAVEL *****/
+
+html{
+	font-family: "Open sans light", sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+body{	margin: 0;}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+#wrap{
+	margin: 0;
+	width: 100%;
+	min-height: 100%;	
+}
+
+#head{
+	height: 62px;
+	/* background-color: #FE9A2E; */
+	background-color: #0040FF;
+	margin: 0;
+	color: white;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: "open sans";
+	box-shadow: 0px 0px 20px #585858;
+}
+
+#head ul{height: inherit;}
+
+#head li{
+	height: inherit;
+	display: inline-block;
+	line-height: 62px;
+	text-align: center;
+	float: left;
+	min-width: 130px;
+}
+
+#head a{height: inherit; width: inherit;}
+
+#nav{
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	top: 62px;
+	margin: 0;
+	background-color: #424242;
+	color: white;
+	font-weight: 800;
+	font-size: 16px;
+	padding: 30px 0px; 
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+@media screen and (max-width: 907px){
+	#nav{	display: none;}
+	
+	.content{float: left;}
+	
+	#map{ width: 90% !important;}
+}
+
+button.accordion {
+    color: white;
+    cursor: pointer;
+    height: 53px;
+	font-family: "Open sans";
+	line-height: 53px;
+    width: 100%;
+    text-align: left;
+    border: none;
+	background-color: inherit;
+    outline: none;
+    transition: border 0.1s;
+    -webkit-transition: border 0.1s linear;
+	font-size: inherit;
+}
+
+button.accordion a{
+	height: inherit;
+	width: inherit; 
+	padding: 0 18px; 
+	box-sizing: border-box;
+}
+
+button.accordion span{
+    float: right;
+    font-size: 20px;
+}
+button.accordion span:after {
+    content: '+'; /* Unicode character for "plus" sign (+) */
+    color: #848484;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transition: all 0.2s ease;
+}
+
+button.accordion.active span:after {
+    -webkit-transform: rotate(180deg);
+	transform: rotate(180deg); 
+	display: block;
+	font-size: 30px;	
+	content: "-";
+}
+
+/* Add background color if  clicked (add the .active class with JS) Or (hovered) */
+button.accordion.active, button.accordion:hover {
+    background-color: #424242;
+	border-left: solid white 3px;
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+	color: inherit;
+    background-color: #585858;
+	max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#nav ul > li{
+	width: inherit;
+	height: 40px;
+	padding-left: 40px;	
+	line-height: 40px;
+    transition: background-color 2s linear;
+}
+
+/* #nav.accordion{
+	transition: 0.4s;
+	cursor: pointer;
+} */
+
+#nav ul.panel > li:hover{
+	background-color:#585858;
+}
+
+#nav ul.panel > li:hover{	opacity: 0.5;}
+
+.content{
+	position: relative;
+	top: 62px;
+	margin-left: 250px;
+	min-height: 81%;
+	max-width: 81%;
+	padding-top: 2%;
+}
+
+.content.distance{
+	padding: 25px;
+}
+
+.content.distance p{
+	text-align: center;
+}
+
+.content h1{
+	font-family: "open sans light";
+	font-family: 36px;
+	color: rgba(0, 64, 255, 0.65);
+	width: 100%;
+	text-align: center;
+}
+
+.content h1:after{
+	content: ' ';
+	width: 200px;
+	display: block;
+	position: relative;
+	top: 1px;
+	margin: 0 auto;
+	height: 1px;
+	background-color: #ccc;
+}
+
+.content #display{
+	width: 100%;
+	float: left;
+	margin: 2o0px auto;
+	clear: both;
+}
+
+.content img{
+	height: 200px;
+	width: 300px;
+	float: left;
+	margin: 0 50px;
+}
+
+.content table, th, td{
+	border: 1px solid  rgba(0, 64, 255, 0.65);
+}
+
+.content table{
+	border: 1px solid  rgba(0, 64, 255, 0.65);
+	border-radius: 5px;
+	max-width: 1000px;
+	margin: 100px auto 100px;
+	border-collapse: collapse;
+}
+
+/* .content#vehicle table td{	min-width: 150px;} */
+
+.content table th{
+	color: white;
+	min-width: 140px;
+	height: 46px;
+	background-color:  rgba(0, 64, 255, 0.65);
+}
+
+.content td{
+	padding: 8px;
+}
+
+.content tr:nth-child(2n){
+	background-color: #f2f2f2;
+}
+
+/***********************************************
+*****************   FORM  **********************
+***********************************************/
+
+.content form {
+	margin: 0 auto;
+	width: 400px
+}
+
+.content form input:not([type=radio]), select, .form-button{
+	float: right;
+	border-radius: 8px;
+	padding: 5px;
+	border: #ccc 1px solid;
+}
+
+.content form textarea{
+	width: 100%;
+}
+
+form label{
+	margin-left: 55px;
+}
+
+.content form input[type=submit], .form-button, input[type=reset], select{
+	background-color: #0040ff;
+	color: white;
+	padding: 5px;
+	border: none;
+	min-width: 100px;
+	cursor: pointer;
+}	
+
+#map{
+	margin: 0 auto;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    color: white;
+    width: 300px;
+    top: 75px;
+	left: 50%;
+	z-index: 9;
+	animation: alert-move 1s;
+    position: fixed;
+}
+
+@keyframes alert-move{
+	from{top: 0px;}
+	to{top: 75px;}
+}
+
+.alert.success{    background-color: #4CAF50;}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+/******************************************************
+****************   	ADD VEHICLES   ********************
+******************************************************/
+
+#imgs{
+	width: 100%;
+	height: 150px;
+}
+
+#counter-container{
+	margin: 100px auto;
+    width: 800px;
+    height: 100px;
+    position: relative;
+}
+
+.counter{
+	padding: 10px;
+    border-radius: 3px;
+    background: rgba(0, 64, 255, 0.65);
+	color: white;
+	width: 90px;
+	height: 80px;
+}
+
+.inner-counter{
+	padding: 15px;
+    border-radius: 3px;
+    background: #0040ff;
+    display: block;
+    text-align: center;
+}
+
+.smalltext{
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.noti{
+	position: fixed;
+	top: 0;
+	left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9;
+    min-width: 400px;
+    line-height: 30px;
+    height: 30px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.noti.success{
+	background-color: #159217;
+	color: #dff0d8;
+}
+
+i.fa.fa-check{color: #159217;}
+
+.error{
+	background-color: #d42d29;
+	color: #f2dede;
+}
