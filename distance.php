@@ -48,44 +48,74 @@
 		<script>
 			var lat2;
 			var lon2;
+			var loc = {
+				lat: 0,
+				lon: 0
+			}
+
 			window.onload = function() {
 			  var startPos;
 			  
 			  var geoSuccess = function(position) {
 				startPos = position;
-				lat2 = startPos.coords.latitude;
+				loccy.lat = startPos.coords.latitude;
 				document.getElementById('userlocation').value = startPos.coords.latitude;
-				lon2 = startPos.coords.longitude;
+				loccy.lon = startPos.coords.longitude;
 				document.getElementById('userlocation').value += ", " + startPos.coords.longitude;
 			  };
 			  navigator.geolocation.getCurrentPosition(geoSuccess);
 			};
-		</script>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		
-		<script>
+	
 			/******************************************
 			**************     MAP     ****************
 			******************************************/
 		
-		  function initMap2() {
-			var bounds = new google.maps.LatLngBounds;
-			var markersArray = [];
+			function initMap2() {
+				var bounds = new google.maps.LatLngBounds;
+				var markersArray = [];
 
-			var origin1 = {lat: lat2, lng: lon2};
-			var origin2 = 'Greenwich, England';
-			var destinationA = 'Bridgetown, Barbados';
-			var destinationB = {lat: 50.087, lng: 14.421};
+				var geoSuccess = function(position) {
+					startPos = position;
+					loc.lat = startPos.coords.latitude;
+					loc.lon = startPos.coords.longitude;
 
-			var destinationIcon = 'https://chart.googleapis.com/chart?' +
-				'chst=d_map_pin_letter&chld=D|FF0000|000000';
-			var originIcon = 'https://chart.googleapis.com/chart?' +
-				'chst=d_map_pin_letter&chld=O|FFFF00|000000';
-			var map = new google.maps.Map(document.getElementById('map2'), {
-			  center: {lat: 55.53, lng: 9.4},
-			  zoom: 10
-			});
+					//console.log("LOccy: " + loc.lat);
+
+					lat = startPos.coords.latitude;
+					lon = startPos.coords.longitude;
+					let arr = [lat, lon]
+					return arr;
+				};
+				let loccy = navigator.geolocation.getCurrentPosition(geoSuccess);
+
+				console.log("LOccy: " + loccy);
+
+				if (document.getElementById('userlocation').value == null){
+					lat2 = 13.1060;
+					lon2 = -59.6132;
+				}
+				else{
+					console.log("It's not null! It's " + document.getElementById('userlocation').value);
+					loc = document.getElementById('userlocation').value.split(",");
+					lat2 = loc[0];
+					lon2 = loc[1];
+				}
+				
+				console.log("lat: " + lat2 + ", lon2: " + lon2);
+
+				var origin1 = {lat: lat2, lng: lon2};
+				var origin2 = 'Christ Church, Barbados';
+				var destinationA = 'Bridgetown, Barbados';
+				var destinationB = {lat: 50.087, lng: 14.421};
+
+				var destinationIcon = 'https://chart.googleapis.com/chart?' +
+					'chst=d_map_pin_letter&chld=D|FF0000|000000';
+				var originIcon = 'https://chart.googleapis.com/chart?' +
+					'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+				var map = new google.maps.Map(document.getElementById('map2'), {
+				center: {lat: 13.0963789, lng: -59.5478358},
+				zoom: 10
+				});
 			var geocoder = new google.maps.Geocoder;
 
 			var service = new google.maps.DistanceMatrixService;
@@ -145,9 +175,11 @@
 			markersArray = [];
 		  }
 		</script>
-		<script async defer
+		<script defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO2jhqxUIikSLLvgVa27g14yFi_iF_6lQ&callback=initMap2">
 		</script>
+		<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 		
 	</div>
 	

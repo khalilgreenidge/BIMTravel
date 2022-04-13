@@ -40,7 +40,7 @@
 				$route = test_input($_POST["route"]);
 				$type = test_input($_POST["type"]);
 				$operational = $_POST["operational"];
-				$location = "13.0963789, -59.6478358";
+				$location = "13.0963789, -59.5478358";
 					
 				
 				//SEND DATA TO DATABADE
@@ -54,7 +54,7 @@
 				$con = mysqli_connect($server, $user, $pwd, $db);
 				
 				$sql = "INSERT INTO vehicles (vehicle_no, driver, route, type, operational, location) 
-					VALUES('$vehicleno', '$driver', '$route', '$type', '$operational', $location) ";
+					VALUES('$vehicleno', '$driver', '$route', '$type', '$operational', '$location') ";
 				
 				$q = mysqli_query($con, $sql);
 				

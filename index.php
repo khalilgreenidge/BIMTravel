@@ -50,11 +50,11 @@
 							  text.textContent = driver
 							  infowincontent.appendChild(text);
 							  
-							  var icon = customLabel[type] || {};
+							  //var icon = customLabel[type] || {};
 							  var marker = new google.maps.Marker({
 								map: map,
 								position: point,
-								label: icon.label 
+								//label: icon.label 
 							  });
 							  marker.addListener('click', function() {
 								infoWindow.setContent(infowincontent);
